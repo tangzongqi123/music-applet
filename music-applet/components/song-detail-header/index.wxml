@@ -1,0 +1,39 @@
+<!--components/song-detail-header/index.wxml-->
+<view class="header">
+    <!-- 背景 --> 
+    <!-- mode="aspectFill"固定宽高,就直接填充  -->
+    <image class="bg-image" mode="aspectFill" src="{{songInfo.coverImgUrl}}"></image>
+    <view class="bg-cover"></view>
+    <!-- 内容 -->
+    <!-- 上部内容 -->
+    <view class="content">
+      <!-- 背景图片 -->
+      <image class="image" mode="aspectFill" src="{{songInfo.coverImgUrl}}"></image>
+      <view class="info">
+        <!-- 标题 -->
+        <view class="title">{{songInfo.name}}</view>
+        <!-- 作者相关信息 -->
+        <view class="author">
+          <!-- 作者头像 -->
+          <image class="avatar" mode="aspectFill" src="{{songInfo.creator.avatarUrl}}"></image>
+          <!-- 作者昵称 -->
+          <text class="nickname">{{songInfo.creator.nickname}}</text>
+        </view>
+        <!-- 简介 -->
+        <view class="desc">{{songInfo.description}}</view>
+      </view>
+    </view>
+    <!-- 下部内容 -->
+    <view class="operation">
+    <!-- 收藏 -->
+     <view class="favor item">
+      <image class="icon" mode="widthFix" src="/assets/images/icons/favor_icon.png"></image>
+      <text class="text">{{songInfo.playCount}}</text>
+     </view>
+     <!-- 分享 -->
+     <view class="share item">
+      <image class="icon" mode="widthFix" src="/assets/images/icons/share_icon.png"></image>
+      <text class="text">分享</text>
+     </view>
+    </view>
+  </view>

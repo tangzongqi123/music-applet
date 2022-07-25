@@ -1,0 +1,22 @@
+<!--components/ranking-area-item/index.wxml-->
+<view class="item">
+<!-- 左部 -->
+  <view class="left-content">
+    <view class="top-music">{{item.name}}</view>
+    <view class="music-text">
+      <block  wx:for="{{item.songList}}" wx:key="id">
+        <view class="music-text-item">
+          <text>{{index}}. {{item.al.name}}</text>
+          <text class="singer"> - {{item.ar[0].name}}</text>
+        </view>
+      </block>
+  </view>
+  </view>
+<!-- 右部 -->
+  <view class="right-photo">
+  <image class="image" src="{{item.coverImgUrl}}" mode="widthFix">
+  </image>
+  <view class="counter">{{item.playCount}}</view>
+  </view>
+
+</view>

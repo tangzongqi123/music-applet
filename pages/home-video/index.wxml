@@ -1,0 +1,12 @@
+<!--pages/home-video/index.wxml-->
+<!-- 导入一个文件,并设置模块名字 -->
+<view class="video">
+  <view class="item" wx:for="{{topMVs}}" wx:key="id">
+  <!-- 传入值 -->
+  <!-- bindtap=""绑定事件监听的方法 -->
+   <video-item-v1 item="{{item}}" 
+                  bindtap="handleViedeoItemClick"
+                  data-item="{{item}}">
+    </video-item-v1>
+  </view>
+</view>
