@@ -1,0 +1,45 @@
+/* base-ui/nav-bar/index.wxss */
+/* .status{
+  background-color: floralwhite;
+} */
+.nav-bar{
+  /* background-color: aqua; */
+  display: flex;
+  /* 动态绑定了 */
+  /* height: 44px; */
+  /* line-height text-align 子元素可以继承 */
+  /* line-height: 44px; */
+  text-align: center;
+}
+
+.left, .right{
+  display: flex;
+  width: 120rpx;
+  align-items: center;
+  justify-content: center;
+}
+/* left插槽 */
+.left-slot:empty+.left-arrow{
+  display: block;
+}
+.left-arrow{
+  display: none;
+}
+.left .left-arrow .icon{
+  width: 44rpx;
+  /* ?图片下面有3像素 */
+  display: block;
+}
+.center-title{
+  display: none;
+}
+.center-slot:empty + .center-title{
+  display: block;
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 自动分配 */
+  flex: 1;
+}

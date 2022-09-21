@@ -69,7 +69,7 @@ Page({
     //2.计算需要播放的currentTime
     const currentTime=this.data.durationTime * value/100
     //3.设置context播放currentTime位置的音乐
-    audioContext.pause()
+    // audioContext.pause()
     audioContext.seek(currentTime/1000)//跳转到指定位置
     //4.记录最新的silderValue
     this.setData({silderValue:value,isSliderChanging:false})
@@ -88,7 +88,13 @@ Page({
     playerStore.setState("playModeIndex",playModeIndex)
   },
   handlePlayBtnClick(){
-    playerStore.dispatch("changeMusicPlayStatusAction")
+    playerStore.dispatch("changeMusicPlayStatusAction",!this.data.isPlaying)
+  },
+  handlePrevBtnClick(){
+    playerStore.dispatch("changeNewMusicAction",false)
+  },
+  handleNextBtnClick(){
+    playerStore.dispatch("changeNewMusicAction")
   },
 
   setupPlayerStoreListener(){

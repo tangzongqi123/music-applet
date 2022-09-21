@@ -1,0 +1,14 @@
+<!--pages/detail-songs/index.wxml-->
+<!-- 根据type 设置不同的头部样式 -->
+<block wx:if="{{type === 'rank'}}">
+  <area-header title="{{songInfo.name}}" showRight="{{false}}"></area-header>
+</block>
+<block wx:elif="{{type === 'menu'}}">
+  <song-detail-header songInfo="{{songInfo}}"></song-detail-header>
+</block>
+<!-- 歌曲列表 -->
+<view class="song-list">
+  <block wx:for="{{songInfo.tracks}}" wx:key="id">
+  <song-item-v2 item="{{item}}" index="{{index+1}}"></song-item-v2>
+  </block>
+</view>

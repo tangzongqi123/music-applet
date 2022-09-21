@@ -32,7 +32,7 @@ bind:click-input="handleSearchClick"
   </area-header>
   <view class="song-list">
     <block wx:for="{{recommendSongs}}" wx:key="id">
-     <song-item-v1 item="{{item}}"></song-item-v1>
+     <song-item-v1 item="{{item}}" bindtap="handleSongItemClick" data-index="{{index}}"></song-item-v1>
 
     </block>
   </view>
@@ -63,5 +63,26 @@ bind:click-input="handleSearchClick"
       >
       </ranking-area-item>
     </block>
+  </view>
+</view>
+
+<!-- 播放工具栏 -->
+<view class="player-bar-placeholder" wx:if="{{currentSong.id}}"></view>
+<view class="player-bar" wx:if="{{currentSong.id}}" bindtap="handlePlayBarClick">
+  <view class="left">
+    <image class="ablum ablum-anim" 
+           mode="aspectFill" 
+           src="{{currentSong.al.picUrl}}"
+           style="animation-play-state: {{playAnimState}} ;">
+    </image>
+    <view class="name">{{currentSong.name}}</view>
+  </view>
+  <view class="right">
+    <image class="icon play" 
+           src="/assets/images/music/{{isPlaying ? 'pause':'play'}}_icon.png"
+           catchtap="handlePlayBtnClick">
+    </image>
+    <image class="icon playlist" src="/assets/images/music/playlist_icon.png"></image>
+    
   </view>
 </view>

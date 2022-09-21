@@ -1,0 +1,70 @@
+/* pages/detail-video/index.wxss */
+.video{
+ width: 100%;
+}
+.video-details-container{
+  height: 70px;
+  margin-left: 3%;
+  margin-top: 2%;
+}
+.video-details-name{
+  margin-top: 1%;
+  font-weight: 550;
+  font-size: large;
+}
+.video-details-artistName{
+  margin-top: 1%;
+  font-weight: 100;
+  font-size: small;
+}
+.video-details-count{
+  margin-top: 1%;
+  font-weight: 100;
+  font-size: small;
+}
+.relate-video-head::before{
+  display: block;
+  content: "";
+  width: 100%;
+  height: 20px;
+}
+.relate-video-head{
+  font-size: larger;
+  font-weight: 520;
+  margin-left: 3%;
+}
+.relate-video-container{
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.relate-video-item{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;  
+}
+.item-image{
+  width: 30%;
+  overflow: hidden;
+}
+.relate-video-item-image{
+  width: 100%;
+  border-radius: 12rpx;
+}
+.item-text{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 73px;
+ justify-content: center;
+}
+.relate-video-item-title{
+  font-size: small;
+  font-weight:550
+}
+.relate-video-item-creator{
+
+  font-size: smaller;
+  font-weight: lighter;
+}
+

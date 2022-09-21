@@ -17,7 +17,6 @@ Page({
     //获取页面的数据
     this.getPageData()
   },
-
   //网络请求
   getPageData(){
     getSearchHot().then(res=>{
@@ -25,9 +24,7 @@ Page({
       this.setData({hotKeywords:res.result.hots})
     })
   },
-
   //事件处理
-
   //输入框输入或者删除时执行函数
   handleSearchChange(event){
     //1.获取搜索框输入的关键字

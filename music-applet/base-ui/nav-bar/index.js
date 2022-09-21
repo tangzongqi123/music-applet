@@ -24,6 +24,9 @@ Component({
   //   }
   // },
   methods: {
-
+    handleLeftClick(){
+      // console.log("返回");
+      this.triggerEvent('click')
+    }
   }
 })

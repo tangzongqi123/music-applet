@@ -1,7 +1,6 @@
 // pages/detail-video/index.js
 import {getMVURL,getMVDetail,getMVRelated} from "../../service/api_vedio"
 Page({
-
   /**
    * 页面的初始数据
    */

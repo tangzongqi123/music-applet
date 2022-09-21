@@ -6,9 +6,7 @@
             value="{{searchValue}}"
             show-action="{{searchValue}}"
             bind:change="handleSearchChange"
-            bind:search="handleSearchAction"
-
-            >
+            bind:search="handleSearchAction">
 </van-search>
 <!-- 热门搜索的名词 -->
 <view class="hot" wx:if="{{!searchValue.length && !suggestSongs.length}}">

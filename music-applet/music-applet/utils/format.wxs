@@ -1,0 +1,37 @@
+ //格式化播放量
+ function formatCount(count) { 
+  //wxs不支持es6语法
+  //可能会传入字符串,所以转换成数字
+  //按道理是Math.parseInt,但是在wxs中parseInt是全局函数
+  var counter=parseInt(count) 
+  if(count>100000000){
+    //toFixed函数可以将Number四舍五入为指定小数位的数字
+    return (counter/100000000).toFixed(1)+"亿"
+  }else if(count>10000){
+    return (counter/10000).toFixed(1)+"万"
+  }else{
+    return counter+""
+  }
+}
+//让时间后面都为2位数
+//12 ->0012->12
+//1->001->01
+function padLeftZero(time) {
+  //让time为字符串
+  time=time+""
+  return("00"+time).slice(time.length)
+}
+//格式化时间
+function formatDuration(duration) {
+  //获取到是毫秒->将毫秒转为秒钟
+  duration=duration/1000
+  //将秒钟->分钟
+  var minute=Math.floor(duration/60)
+  //剩余的秒钟
+  var second=Math.floor(duration) % 60
+  return padLeftZero(minute) + ":" + padLeftZero(second)
+}
+module.exports={
+  formatCount:formatCount,
+  formatDuration:formatDuration
+}
